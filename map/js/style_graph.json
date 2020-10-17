@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Stars rating in each country",
+  "data": {
+    "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/data/ramen_normalise.csv"
+  },
+  "vconcat": [
+    {
+      "encoding": {
+        "color": {
+          "condition": {
+            "selection": "brush",
+            "title": "Style",
+            "field": "Style",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Bowl", "Pack", "Cup", "Tray", "Box"],
+              "range": ["#e7ba52", "#a7a7a7", "#aec7e8", "#1f77b4", "#9467bd"]
+            }
+          },
+          "value": "lightgray"
+        },
+        "size": {
+          "title": "Number of reviews",
+          "field": "Review..",
+          "scale": {"domain": [19, 2570]},
+          "type": "quantitative"
+        },
+        "x": {"field": "Country", "title": "Country"},
+        "y": {
+          "title": "Stars rating",
+          "field": "Stars",
+          "type": "quantitative",
+          "scale": {"domain": [0, 5]}
+        }
+      },
+      "width": 600,
+      "height": 300,
+      "mark": "point",
+      "selection": {"brush": {"encodings": ["x"], "type": "single"}},
+      "transform": [{"filter": {"selection": "click"}}]
+    },
+    {
+      "encoding": {
+        "color": {
+          "condition": {
+            "selection": "click",
+            "field": "Style",
+            "scale": {
+              "domain": ["Bowl", "Pack", "Cup", "Tray", "Box"],
+              "range": ["#e7ba52", "#a7a7a7", "#aec7e8", "#1f77b4", "#9467bd"]
+            }
+          },
+          "value": "lightgray"
+        },
+        "x": {"aggregate": "count"},
+        "y": {
+          "title": "Style",
+          "field": "Style",
+          "type": "ordinal",
+          "sort": "-x"
+        }
+      },
+      "width": 600,
+      "mark": "bar",
+      "selection": {"click": {"encodings": ["color"], "type": "multi"}},
+      "transform": [{"filter": {"selection": "brush"}}]
+    }
+  ],
+  "config": {}
+}
