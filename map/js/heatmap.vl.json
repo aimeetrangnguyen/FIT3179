@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A dashboard with cross-highlighting.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/data/top10flavour.csv"
+  },
+  "vconcat": [
+    {
+      "transform": [{"filter": {"selection": "pts"}}],
+      "mark": "rect",
+      "encoding": {
+        "x": {"field": "Stars"},
+        "y": {"field": "Country"},
+        "color": {"aggregate": "count", "type": "quantitative"}
+      }
+    },
+    {
+      "width": 330,
+      "height": 120,
+      "mark": "bar",
+      "selection": {"pts": {"type": "single", "encodings": ["x"]}},
+      "encoding": {
+        "x": {"field": "Flavour", "axis": {"labelAngle": -40}},
+        "y": {"aggregate": "count", "type": "quantitative"},
+        "color": {
+          "condition": {"selection": "pts", "value": "steelblue"},
+          "value": "grey"
+        }
+      }
+    }
+  ],
+  "resolve": {"legend": {"color": "independent", "size": "independent"}},
+  "config": {}
+}
