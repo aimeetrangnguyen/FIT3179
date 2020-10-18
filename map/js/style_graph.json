@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Stars rating in each country",
+  "title": "The average rating stars based on style of packaging",
   "data": {
     "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/data/ramen_normalise.csv"
   },
@@ -20,19 +20,18 @@
           },
           "value": "lightgray"
         },
-        "size": {
-          "title": "Number of reviews",
-          "field": "Review..",
-          "scale": {"domain": [19, 2570]},
-          "type": "quantitative"
-        },
-        "x": {"field": "Country", "title": "Country"},
-        "y": {
+        "y": {"field": "Country", "title": "Country"},
+        "x": {
           "title": "Stars rating",
+          "aggregate": "mean",
           "field": "Stars",
           "type": "quantitative",
-          "scale": {"domain": [0, 5]}
-        }
+          "scale": {"zero": false}
+        },
+        "tooltip": [
+           {"field": "Country", "type": "nominal"},
+           {"aggregate": "mean", "field": "Stars", "type": "quantitative", "format": ".2f"}
+         ]
       },
       "width": 600,
       "height": 300,
