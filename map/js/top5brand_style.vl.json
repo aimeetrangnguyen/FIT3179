@@ -1,0 +1,19 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/data/ramen_top5_brand.csv"
+  },
+  "mark": "circle",
+  "encoding": {
+    "height": {"step": 12},
+    "x": {
+      "aggregate": "mean",
+      "field": "Stars",
+      "type": "quantitative",
+      "scale": {"zero": false}
+    },
+    "y": {"field": "Brand", "type": "ordinal", "sort": "-x"},
+    "color": {"field": "Style", "type": "nominal"}
+  },
+  "config": {}
+}
