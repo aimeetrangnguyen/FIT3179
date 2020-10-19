@@ -1,24 +1,24 @@
-Brand,Country,Count
-Tao Kae Noi,Thailand,1
-Prima,Singapore,1
-Takamori,Japan,1
-The Ramen Rater Select,Malaysia,1
-Kiki Noodle,Taiwan,1
-MyKuali,Japan,1
-Little Cook,Taiwan,1
-MyKuali,Singapore,1
-Patanjali,India,1
-Nyor Nyar,Malaysia,1
-ORee Garden,Malaysia,1
-Prima Taste,Singapore,1
-MyOri,Malaysia,1
-Seven & I,Japan,1
-Torishi,Japan,1
-ChoripDong,South Korea,1
-The Bridge,Malaysia,1
-Kimura,Japan,1
-Peyang,Japan,1
-Daddy,Malaysia,1
-Song Hak,South Korea,1
-Foodmon,South Korea,1
-Higashi,Japan,1
+Brand,Country,Count,R
+Tao Kae Noi,Thailand,1,1
+Prima,Singapore,1,3
+Takamori,Japan,1,7
+The Ramen Rater Select,Malaysia,1,6
+Kiki Noodle,Taiwan,1,2
+MyKuali,Japan,1,7
+Little Cook,Taiwan,1,2
+MyKuali,Singapore,1,3
+Patanjali,India,1,1
+Nyor Nyar,Malaysia,1,6
+ORee Garden,Malaysia,1,6
+Prima Taste,Singapore,1,3
+MyOri,Malaysia,1,6
+Seven & I,Japan,1,7
+Torishi,Japan,1,7
+ChoripDong,South Korea,1,3
+The Bridge,Malaysia,1,6
+Kimura,Japan,1,7
+Peyang,Japan,1,7
+Daddy,Malaysia,1,6
+Song Hak,South Korea,1,3
+Foodmon,South Korea,1,3
+Higashi,Japan,1,7
