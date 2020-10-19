@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Five-stars ramen distribution",
+  "config": {"view": {"stroke": ""}},
+  "width": 200,
+  "height": 40,
+  "data": {
+    "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/data/fivestar.csv"
+  },
+  "transform": [
+    {"calculate": "{1: '🍜'}[datum.Count]", "as": "emoji"},
+    {"window": [{"op": "rank", "as": "rank"}], "groupby": ["Country"]}
+  ],
+  "mark": {"type": "text", "baseline": "middle"},
+  "encoding": {
+    "x": {"field": "rank", "type": "ordinal", "axis": null},
+    "y": {"field": "Count", "type": "nominal", "axis": null, "sort": "null"},
+    "row": {"field": "Country", "header": {"title": ""}},
+    "text": {"field": "emoji", "type": "nominal"},
+    "size": {"value": 20}
+  }
+}
