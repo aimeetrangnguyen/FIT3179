@@ -1,0 +1,63 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "title": "The distribution of top 5 biggest ramen brands",
+  "data": {
+    "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/data/ramen_top5_brand.csv"
+  },
+  "params": [
+    {
+      "name": "Brand_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "Mama", "Myojo", "Nissin", "Nongshim", "Paldo"],
+        "labels": ["Show all", "Mama", "Myojo", "Nissin", "Nongshim", "Paldo"],
+        "name": "Top 5 biggest ramen brands: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "Brand_selection == null || datum.Brand == Brand_selection"}
+  ],
+  "selection": {
+    "Brand_highlight": {"type": "multi", "fields": ["Brand"], "bind": "legend"}
+  },
+  "mark": {
+    "type": "circle",
+    "opacity": 0.7,
+    "stroke": "black",
+    "strokeWidth": 0.2
+  },
+  "encoding": {
+    "x": {
+      "field": "Stars",
+      "type": "quantitative",
+      "scale": {"zero": false},
+      "axis": {"tickCount": 4}
+    },
+    "y": {"field": "Country", "type": "ordinal", "sort": "-x"},
+    "color": {
+      "field": "Brand",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Mama", "Myojo", "Nissin", "Nongshim", "Paldo"],
+        "range": ["#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854"]
+      }
+    },
+    "opacity": {
+      "condition": {"selection": "Brand_highlight", "value": 0.9},
+      "value": 0.05
+    },
+    "size": {
+      "field": "Count_no",
+      "type": "quantitative",
+      "title": "Variety number",
+      "scale": {
+        "type": "threshold",
+        "domain": [5, 30, 50, 80, 90],
+        "range": [10, 50, 100, 200, 300, 400]
+      }
+    }
+  },
+  "config": {}
+}
