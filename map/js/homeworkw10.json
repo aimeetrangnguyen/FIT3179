@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 700,
+  "width": 400,
   "title": "The distribution of top 5 biggest ramen brands",
   "data": {
     "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/data/ramen_top5_brand.csv"
@@ -77,8 +77,8 @@
         "type": "text",
         "align": "right",
         "baseline": "middle",
-        "dx": -20,
-        "fontSize": 11.5,
+        "dx": -30,
+        "fontSize": 9,
         "fontStyle": "italic"
       },
       "encoding": {
