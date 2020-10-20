@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "background": "white",
   "padding": 5,
-  "width": 400,
-  "height": 300,
+  "width": 600,
+  "height": 500,
   "title": {
     "text": "Ramen ratings in Asia",
     "frame": "group"
