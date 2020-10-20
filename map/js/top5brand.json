@@ -30,13 +30,13 @@
     "strokeWidth": 0.2
   },
   "encoding": {
-    "x": {
+    "y": {
       "field": "Stars",
       "type": "quantitative",
       "scale": {"zero": false},
       "axis": {"tickCount": 4}
     },
-    "y": {"field": "Country", "type": "ordinal", "sort": "-x"},
+    "x": {"field": "Country", "type": "ordinal", "sort": "-x"},
     "color": {
       "field": "Brand",
       "type": "nominal",
