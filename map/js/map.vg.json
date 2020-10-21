@@ -1,125 +1,67 @@
 {
-  "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "background": "white",
-  "padding": 5,
-  "width": 500,
-  "height": 400,
-  "title": {
-    "text": "Ramen ratings in Asia",
-    "frame": "group"
-  },
-  "style": "cell",
-  "data": [
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Ramen ratings in Asia (2020)",
+  "width": 600,
+  "height": 300,
+  "layer": [
     {
-      "name": "source_1",
-      "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/data/ramen_normalise.csv",
-      "format": {
-        "type": "csv",
-        "delimiter": ","
-      }
+      "data": {
+        "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/js/asia1.geo.json",
+        "format": {"type": "topojson", "feature": "asia"}
+      },
+      "mark": {"type": "geoshape", "fill": "rgb(242, 241, 231 )", "stroke": "white"}
     },
     {
-      "name": "source_0",
-      "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/js/asia1.geo.json",
-      "format": {
-        "type": "topojson",
-        "feature": "asia",
-        "parse": {}
-      },
-      "transform": [
-        {
-          "type": "formula",
-          "expr": "datum[\"properties\"] && datum[\"properties\"][\"name\"]",
-          "as": "properties.name"
-        },
-        {
-          "type": "lookup",
-          "from": "source_1",
-          "key": "Country",
-          "fields": [
-            "properties.name"
-          ],
-          "values": [
-            "Average"
-          ]
-        },
-        {
-          "type": "filter",
-          "expr": "isValid(datum[\"Average\"]) && isFinite(+datum[\"Average\"])"
-        }
-      ]
+  "data": {
+    "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/js/asia1.geo.json",
+    "format": {
+      "type": "topojson",
+      "feature": "asia"
     }
-  ],
-  "projections": [
+  },
+  "mark": {
+    "type": "geoshape"
+  },
+  "transform": [
     {
-      "name": "projection",
-      "size": {
-        "signal": "[width, height]"
-      },
-      "fit": {
-        "signal": "data('source_0')"
-      },
-      "type": "equirectangular"
-    }
-  ],
-  "marks": [
-    {
-      "name": "marks",
-      "type": "shape",
-      "style": [
-        "geoshape"
-      ],
+      "lookup": "properties.name",
       "from": {
-        "data": "source_0"
-      },
-      "encode": {
-        "update": {
-          "fill": {
-            "scale": "color",
-            "field": "Average"
-          },
-          "tooltip": {
-            "signal": "{\"Country\": isValid(datum[\"properties.name\"]) ? datum[\"properties.name\"] : \"\"+datum[\"properties.name\"], \"Average\": format(datum[\"Average\"], \".2f\")}"
-          },
-          "ariaRoleDescription": {
-            "value": "geoshape"
-          },
-          "description": {
-            "signal": "\"Average: \" + (format(datum[\"Average\"], \"\")) + \"; Country: \" + (isValid(datum[\"properties.name\"]) ? datum[\"properties.name\"] : \"\"+datum[\"properties.name\"])"
-          }
-        }
-      },
-      "transform": [
-        {
-          "type": "geoshape",
-          "projection": "projection"
-        }
-      ]
+        "data": {
+          "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/data/ramen_normalise.csv"
+        },
+        "key": "Country",
+        "fields": [
+          "Average"
+        ]
+      }
     }
   ],
-  "scales": [
-    {
-      "name": "color",
-      "type": "linear",
-      "domain": {
-        "data": "source_0",
-        "field": "Average"
+  "projection": {
+    "type": "equirectangular"
+  },
+  "encoding": {
+    "color": {
+      "field": "Average",
+      "type": "quantitative",
+      "title": "Average stars",
+      "scale": {
+        "scheme": "yelloworangered"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "properties.name",
+        "type": "nominal",
+        "title": "Country"
       },
-      "range": {
-        "scheme": "redpurple"
-      },
-      "interpolate": "hcl",
-      "zero": false
+      {
+        "field": "Average",
+        "type": "quantitative",
+        "title": "Average stars rating",
+        "format": ".2f"
+      }
+    ]
+  }
     }
-  ],
-  "legends": [
-    {
-      "fill": "color",
-      "gradientLength": {
-        "signal": "clamp(height, 64, 200)"
-      },
-      "title": "Average"
-    }
-  ],
-  "config": {}
+  ]
 }
