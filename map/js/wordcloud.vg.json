@@ -3,7 +3,7 @@
   "description": "A word cloud visualization depicting Vega research paper abstracts.",
   "width": 600,
   "height": 200,
-  "padding": 0,
+  "padding": 100,
   "data": [
     {
       "name": "table",
