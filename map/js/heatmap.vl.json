@@ -13,7 +13,7 @@
       "mark": "rect",
       "encoding": {
         "x": {"field": "Stars", "axis": {"tickCount": 4}},
-        "y": {"field": "Country"},
+        "y": {"field": "Country", "axis": {"labelFontSize": 12}},
         "color": {"aggregate": "count", "type": "quantitative", "legend": {"title": "Number of ramens"}, "scale": {"scheme": "yelloworangered"}},
         "tooltip": [
         {"field": "Country", "type": "nominal"},
@@ -32,10 +32,12 @@
           "condition": {"selection": "pts", "value": "#FFC300"},
           "value": "grey"
         },
-        "x": {"field": "Flavour", "axis": {"labelAngle": -40}, "sort": "-y"}
+        "x": {"field": "Flavour", "axis": {"labelAngle": -40, "labelFontSize": 12}, "sort": "-y"}
       }
     }
   ],
   "resolve": {"legend": {"color": "independent", "size": "independent"}},
-  "config": {}
+  "config": {"axis": {"labelFont": "monospace"}, 
+   "legend": {"titleFont": "monospace", "labelFont": "monospace"}, 
+   "title": {"fontSize": 15}}
 }
