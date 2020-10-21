@@ -33,8 +33,8 @@
            {"aggregate": "mean", "field": "Stars", "type": "quantitative", "format": ".2f"}
          ]
       },
-      "width": 600,
-      "height": 300,
+      "width": 500,
+      "height": 200,
       "mark": "point",
       "selection": {"brush": {"encodings": ["x"], "type": "single"}},
       "transform": [{"filter": {"selection": "click"}}]
@@ -52,7 +52,7 @@
           },
           "value": "lightgray"
         },
-        "x": {"aggregate": "count"},
+        "x": {"aggregate": "count", "title": "Count"},
         "y": {
           "title": "Style",
           "field": "Style",
@@ -60,7 +60,7 @@
           "sort": "-x"
         }
       },
-      "width": 600,
+      "width": 500,
       "mark": "bar",
       "selection": {"click": {"encodings": ["color"], "type": "multi"}},
       "transform": [{"filter": {"selection": "brush"}}]
