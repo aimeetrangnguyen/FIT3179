@@ -1,5 +1,5 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json", 
   "title": "Top 10 ramen flavours",
   "description": "A dashboard with cross-highlighting.",
   "data": {
@@ -7,12 +7,14 @@
   },
   "vconcat": [
     {
+      "width": 350,
+      "height": 200,
       "transform": [{"filter": {"selection": "pts"}}],
       "mark": "rect",
       "encoding": {
-        "x": {"field": "Stars"},
+        "x": {"field": "Stars", "axis": {"tickCount": 4}},
         "y": {"field": "Country"},
-        "color": {"aggregate": "count", "type": "quantitative", "legend": {"title": "Number of ramens"}},
+        "color": {"aggregate": "count", "type": "quantitative", "legend": {"title": "Number of ramens"}, "scale": {"scheme": "yelloworangered"}},
         "tooltip": [
         {"field": "Country", "type": "nominal"},
         {"aggregate": "count", "field": "Stars", "type": "quantitative", "title": "Number of ramens"}
@@ -20,14 +22,14 @@
       }
     },
     {
-      "width": 330,
+      "width": 350,
       "height": 120,
       "mark": "bar",
       "selection": {"pts": {"type": "single", "encodings": ["x"]}},
       "encoding": {
-        "y": {"aggregate": "count", "type": "quantitative"},
+        "y": {"aggregate": "count", "type": "quantitative","title": "Count"},
         "color": {
-          "condition": {"selection": "pts", "value": "steelblue"},
+          "condition": {"selection": "pts", "value": "#FFC300"},
           "value": "grey"
         },
         "x": {"field": "Flavour", "axis": {"labelAngle": -40}, "sort": "-y"}
