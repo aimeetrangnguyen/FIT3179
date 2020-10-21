@@ -9,7 +9,7 @@
         "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/js/asia1.geo.json",
         "format": {"type": "topojson", "feature": "asia"}
       },
-      "mark": {"type": "geoshape", "fill": "rgb(242, 241, 231 )", "stroke": "white"}
+      "mark": {"type": "geoshape", "fill": "rgb(242, 241, 231 )", "stroke": "white", "strokeWidth": 1}
     },
     {
   "data": {
@@ -20,7 +20,9 @@
     }
   },
   "mark": {
-    "type": "geoshape"
+    "type": "geoshape", 
+    "stroke": "white",
+    "strokeWidth": 1
   },
   "transform": [
     {
