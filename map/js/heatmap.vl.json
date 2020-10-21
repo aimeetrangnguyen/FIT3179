@@ -39,5 +39,5 @@
   "resolve": {"legend": {"color": "independent", "size": "independent"}},
   "config": {"axis": {"labelFont": "monospace"}, 
    "legend": {"titleFont": "monospace", "labelFont": "monospace"}, 
-   "title": {"fontSize": 15}}
+   "title": {"fontSize": 15, "anchor": "middle"}}
 }
