@@ -1,8 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Five-stars ramen distribution",
-  "config": {"view": {"stroke": ""}},
-  "width": 600,
+  "config": {"view": {"stroke": ""},
+      "axis": {"labelFont": "calibri", "labelFontSize": 12, "titleFont": "calibri", "titleFontSize": 16, "titleFontWeight": "bold"}, 
+   "legend": {"titleFont": "calibri", "labelFont": "calibri", "titleFontSize": 13, "labelFontSize": 12},
+   "title": {"font": "calibri", "fontSize": 18, "anchor": "middle"}
+  },
+  "width": 550,
   "height": 40,
   "data": {
     "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/data/fivestar.csv"
@@ -11,13 +15,13 @@
     {"calculate": "{1: '🍜'}[datum.Count]", "as": "emoji"},
     {"window": [{"op": "rank", "as": "rank"}], "groupby": ["Country"]}
   ],
-  "mark": {"type": "text", "baseline": "middle"},
+  "mark": {"type": "text", "baseline": "middle", "font": "calibri"},
   "encoding": {
     "x": {"field": "rank", "type": "ordinal", "axis": null},
     "y": {"field": "Count", "type": "nominal", "axis": null},
-    "row": {"field": "Country", "header": {"title": ""}},
+    "row": {"field": "Country", "header": {"title": ""}, "sort": ["Japan", "Malaysia", "Singapore", "South Korea", "Taiwan", "India", "Thailand"]},
     "text": {"field": "emoji", "type": "nominal"},
-    "size": {"value": 35},
+    "size": {"value": 40},
     "tooltip": [
       {"field": "Brand", "type": "nominal"}
     ]
