@@ -15,7 +15,7 @@
             "type": "nominal",
             "scale": {
               "domain": ["Pack", "Bowl", "Cup", "Tray", "Box"],
-              "range": ["#EA4E06", "#FCA95C", "#EDD162", "#A7C292", "#ABC0CE"]
+              "range": ["#EA4E06", "#FCA95C", "#EDD162", "#ABC0CE","#bc92c2"]
             }
           },
           "value": "lightgray"
@@ -34,7 +34,7 @@
          ]
       },
       "width": 500,
-      "height": 200,
+      "height": 300,
       "mark": "point",
       "selection": {"brush": {"encodings": ["x"], "type": "single"}},
       "transform": [{"filter": {"selection": "click"}}]
@@ -47,7 +47,7 @@
             "field": "Style",
             "scale": {
               "domain": ["Pack", "Bowl", "Cup", "Tray", "Box"],
-              "range": ["#EA4E06", "#FCA95C", "#EDD162", "#A7C292", "#ABC0CE"]
+              "range": ["#EA4E06", "#FCA95C", "#EDD162","#ABC0CE", "#bc92c2"]
             }
           },
           "value": "lightgray"
@@ -67,7 +67,8 @@
     }
   ],
   "config": {
-      "axis": {"labelFont": "monospace"}, 
-   "legend": {"titleFont": "monospace", "labelFont": "monospace"}
+      "axis": {"labelFont": "calibri", "labelFontSize": 12, "titleFont": "calibri", "titleFontSize": 16, "titleFontWeight": "bold"}, 
+   "legend": {"titleFont": "calibri", "labelFont": "calibri", "titleFontSize": 13, "labelFontSize": 12},
+   "title": {"font": "calibri", "fontSize": 18, "anchor": "middle"}
   }
 }
