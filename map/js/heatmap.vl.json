@@ -1,7 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json", 
-  "title": "Top 10 ramen flavours",
-  "description": "A dashboard with cross-highlighting.",
+  "title": "Ratings of top 10 ramen flavours",
   "data": {
     "url": "https://raw.githubusercontent.com/aimeetrangnguyen/FIT3179/master/map/data/top10flavour.csv"
   },
@@ -32,12 +31,14 @@
           "condition": {"selection": "pts", "value": "#FFC300"},
           "value": "grey"
         },
-        "x": {"field": "Flavour", "axis": {"labelAngle": -40, "labelFontSize": 12}, "sort": "-y"}
+        "x": {"field": "Flavour", "axis": {"labelAngle": -40, "labelFontSize": 13}, "sort": "-y"}
       }
     }
   ],
   "resolve": {"legend": {"color": "independent", "size": "independent"}},
-  "config": {"axis": {"labelFont": "monospace"}, 
-   "legend": {"titleFont": "monospace", "labelFont": "monospace"}, 
-   "title": {"fontSize": 15, "anchor": "middle"}}
+  "config": {
+      "axis": {"labelFont": "calibri", "labelFontSize": 12, "titleFont": "calibri", "titleFontSize": 16, "titleFontWeight": "bold"}, 
+   "legend": {"titleFont": "calibri", "labelFont": "calibri", "titleFontSize": 13, "labelFontSize": 12},
+   "title": {"font": "calibri", "fontSize": 18, "anchor": "middle"}
+  }
 }
