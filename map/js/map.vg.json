@@ -47,7 +47,9 @@
       "type": "quantitative",
       "title": "Average stars",
       "scale": {
-        "scheme": "yelloworangered"
+        "type": "threshold",
+        "domain": [3.2, 3.6, 4.0],
+        "range": ["#fed16f", "#fea849", "#f9522b", "#ca0b22"]
       }
     },
     "tooltip": [
@@ -65,5 +67,10 @@
     ]
   }
     }
-  ]
+  ],
+  "config": {
+      "axis": {"labelFont": "calibri", "labelFontSize": 12, "titleFont": "calibri", "titleFontSize": 16, "titleFontWeight": "bold"}, 
+   "legend": {"titleFont": "calibri", "labelFont": "calibri", "titleFontSize": 13, "labelFontSize": 12},
+   "title": {"font": "calibri", "fontSize": 18, "anchor": "middle"}
+  }
 }
