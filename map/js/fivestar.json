@@ -4,7 +4,7 @@
   "config": {"view": {"stroke": ""},
       "axis": {"labelFont": "calibri", "labelFontSize": 12, "titleFont": "calibri", "titleFontSize": 16, "titleFontWeight": "bold"}, 
    "legend": {"titleFont": "calibri", "labelFont": "calibri", "titleFontSize": 13, "labelFontSize": 12},
-   "title": {"font": "calibri", "fontSize": 18, "anchor": "middle"}
+   "title": {"font": "calibri", "fontSize": 18, "anchor": "middle", "dy": -20}
   },
   "width": 550,
   "height": 40,
