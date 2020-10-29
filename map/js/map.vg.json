@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Ramen ratings in Asia (2020)",
-  "width": 600,
-  "height": 300,
+  "width": 700,
+  "height": 400,
   "layer": [
     {
       "data": {
