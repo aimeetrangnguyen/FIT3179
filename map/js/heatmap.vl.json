@@ -6,7 +6,7 @@
   },
   "vconcat": [
     {
-      "width": 400,
+      "width": 450,
       "height": 300,
       "transform": [{"filter": {"selection": "pts"}}],
       "mark": "rect",
@@ -21,7 +21,7 @@
       }
     },
     {
-      "width": 400,
+      "width": 450,
       "height": 100,
       "mark": "bar",
       "selection": {"pts": {"type": "single", "encodings": ["x"]}},
