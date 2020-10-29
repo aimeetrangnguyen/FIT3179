@@ -70,7 +70,7 @@
   ],
   "config": {
       "axis": {"labelFont": "calibri", "labelFontSize": 12, "titleFont": "calibri", "titleFontSize": 16, "titleFontWeight": "bold"}, 
-   "legend": {"titleFont": "calibri", "labelFont": "calibri", "titleFontSize": 13, "labelFontSize": 12},
+   "legend": {"titleFont": "calibri", "labelFont": "calibri", "titleFontSize": 13, "labelFontSize": 12, "orient": "bottom-left", "direction": "horizontal"},
    "title": {"font": "calibri", "fontSize": 18, "anchor": "middle"}
   }
 }
